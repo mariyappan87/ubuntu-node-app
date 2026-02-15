@@ -1,13 +1,14 @@
 const http = require('http');
 
-http.createServer((req, res) => {
+const server = http.createServer((req, res) => {
+
   res.writeHead(200, { 'Content-Type': 'text/html' });
 
   res.end(`
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Mariyappan DevOps App</title>
+        <title>Mariyappan DevOps App 🚀</title>
         <style>
             body {
                 text-align: center;
@@ -34,7 +35,8 @@ http.createServer((req, res) => {
     </head>
     <body>
         <h1>🚀 Mariyappan DevOps Interactive App</h1>
-        <button onclick="changeColor()">Change Background Color</button>
+        <p>Click the button to change background color</p>
+        <button onclick="changeColor()">Change Color</button>
 
         <script>
             function changeColor() {
@@ -47,4 +49,8 @@ http.createServer((req, res) => {
     </html>
   `);
 
-}).listen(3000, "0.0.0.0");
+});
+
+server.listen(3000, "0.0.0.0", () => {
+  console.log("Server running on port 3000");
+});
